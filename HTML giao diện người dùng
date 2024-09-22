@@ -1,0 +1,29 @@
+tạo giao diện người dùng với các sinh viên lớp k57kmt01 (40 người)
+HTML 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="classroom-container">
+        <!-- Loop through 40 students -->
+        <div class="student">
+            <div class="status-bar blue"></div>
+            <div class="fan"></div>
+            <div class="status-bar red"></div>
+        </div>
+
+        <!-- Add 40 student blocks as needed -->
+        <!-- Example:  -->
+        <!-- <div class="student">...</div> -->
+    </div>
+
+    <div class="tv-status">
+        <span>TV ON</span>
+    </div>
+</body>
+</html>
+
