@@ -1,0 +1,70 @@
+#HTML
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê thay đổi vị trí</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Thống kê thay đổi vị trí của thành viên</h2>
+    <table>
+        <tr>
+            <th>Tên thành viên</th>
+            <th>Vị trí cũ</th>
+            <th>Vị trí mới</th>
+            <th>Thời gian thay đổi</th>
+        </tr>
+        <!-- Dữ liệu sẽ được lấy từ database -->
+        <tbody id="historyTable">
+        </tbody>
+    </table>
+
+    <script>
+        // Giả sử có một API để lấy lịch sử thay đổi
+        fetch('/get_position_history')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('historyTable');
+            data.forEach(item => {
+                const row = `<tr>
+                                <td>${item.member_name}</td>
+                                <td>${item.old_position}</td>
+                                <td>${item.new_position}</td>
+                                <td>${item.change_time}</td>
+                             </tr>`;
+                tableBody.innerHTML += row;
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+#Node.js
+
+app.get('/get_position_history', (req, res) => {
+    let sql = `SELECT member_name, old_position, new_position, change_time 
+               FROM position_history 
+               ORDER BY change_time DESC`;
+    db.query(sql, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+});
