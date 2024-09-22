@@ -1,0 +1,87 @@
+ĐỂ BÁO CÁO THỜI ĐIỂM LỚP HỌC 
+ // TẠO 1 BẢNG LƯU TRẠNG THÁI LỚP HỌC 
+
+CREATE TABLE attendance (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    member_name VARCHAR(50),
+    is_present BOOLEAN,
+    check_in_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO attendance (member_name, is_present)
+VALUES ('HS A', TRUE);
+// CẬP NHẬT TRẠNG THÁI CÓ MẶT CỦA SINH VIÊN 
+
+SELECT COUNT(*) AS present_count 
+FROM attendance 
+WHERE is_present = TRUE;
+//TRUY VẤN DỮ LIÊU CÓ MẶT 
+
+#HTML
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trạng thái thành viên</title>
+    <style>
+        .classroom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .student {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .present {
+            background-color: green;
+        }
+        .absent {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Trạng thái có mặt của thành viên</h2>
+    <div class="classroom" id="classroom">
+        <!-- Các thành viên sẽ được hiển thị ở đây -->
+    </div>
+
+    <script>
+        // Giả sử có API trả về danh sách thành viên và trạng thái có mặt
+        const members = [
+            { name: "HS A", is_present: true },
+            { name: "HS B", is_present: true },
+            { name: "HS C", is_present: false },
+            { name: "HS D", is_present: true },
+            { name: "HS E", is_present: true },
+            { name: "HS F", is_present: false },
+            { name: "HS G", is_present: true },
+            { name: "HS H", is_present: true }
+        ];
+
+        const classroom = document.getElementById('classroom');
+
+        members.forEach(member => {
+            const div = document.createElement('div');
+            div.classList.add('student');
+            div.classList.add(member.is_present ? 'present' : 'absent');
+            div.textContent = member.name;
+            classroom.appendChild(div);
+        });
+    </script>
+
+</body>
+</html>
+
+CÓ THỂ DÙNG CSS ĐỂ THAY ĐỔI MÀU SẮC CỦA THÀNH VIÊN TÙY THEO TRẠNG THÁI CÓ MẶT CỦA HỌ 
