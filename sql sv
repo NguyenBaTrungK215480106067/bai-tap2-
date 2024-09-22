@@ -1,0 +1,58 @@
+CREATE TABLE Teacher (
+    TeacherID INT PRIMARY KEY,
+    TeacherName NVARCHAR(50),
+    PositionX INT, -- Tọa độ X trong lớp học
+    PositionY INT  -- Tọa độ Y trong lớp học
+);
+
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    StudentName NVARCHAR(50),
+    DeskID INT,
+    FOREIGN KEY (DeskID) REFERENCES Desk(DeskID)
+);
+
+CREATE TABLE Desk (
+    DeskID INT PRIMARY KEY,
+    DeskName NVARCHAR(50),
+    PositionX INT, 
+    PositionY INT  -
+);
+
+REATE TABLE Classroom (
+    ClassID INT PRIMARY KEY,
+    ClassName NVARCHAR(50),
+    TeacherID INT, 
+    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)
+);
+
+INSERT INTO Teacher (TeacherID, TeacherName, PositionX, PositionY)
+VALUES (1, 'thầy A', 2, 1);
+
+
+INSERT INTO Desk (DeskID, DeskName, PositionX, PositionY)
+VALUES 
+(1, 'bàn A', 1, 2),
+(2, 'bàn B', 2, 2),
+(3, 'bàn C', 3, 2),
+(4, 'bàn D', 4, 2),
+(5, 'bàn E', 1, 3),
+(6, 'bàn F', 2, 3),
+(7, 'bàn G', 3, 3),
+(8, 'bàn H', 4, 3);
+
+
+INSERT INTO Student (StudentID, StudentName, DeskID)
+VALUES 
+(1, 'HS A', 1),
+(2, 'HS B', 2),
+(3, 'HS C', 3),
+(4, 'HS D', 4),
+(5, 'HS E', 5),
+(6, 'HS F', 6),
+(7, 'HS G', 7),
+(8, 'HS H', 8);
+
+
+INSERT INTO Classroom (ClassID, ClassName, TeacherID)
+VALUES (1, 'Lớp 1', 1);
