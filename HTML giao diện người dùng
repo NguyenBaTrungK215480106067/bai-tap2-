@@ -1,4 +1,4 @@
-tạo giao diện người dùng với các sinh viên lớp k57kmt01 (40 người)
+tạo giao diện người dùng với các sinh viên lớp k57kmt01 (10 người)
 HTML 
 <html lang="en">
 <head>
@@ -9,14 +9,14 @@ HTML
 </head>
 <body>
     <div class="classroom-container">
-        <!-- Loop through 40 students -->
+        <!-- Loop through 10 students -->
         <div class="student">
             <div class="status-bar blue"></div>
             <div class="fan"></div>
             <div class="status-bar red"></div>
         </div>
 
-        <!-- Add 40 student blocks as needed -->
+        <!-- Add 10 student blocks as needed -->
         <!-- Example:  -->
         <!-- <div class="student">...</div> -->
     </div>
