@@ -1,0 +1,17 @@
+CREATE TABLE position_history (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    member_name VARCHAR(50),
+    old_position VARCHAR(20),
+    new_position VARCHAR(20),
+    change_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO position_history (member_name, old_position, new_position)
+
+VALUES ('HS A', 'bàn A', 'bàn D');
+
+SELECT member_name, old_position, new_position, change_time
+
+FROM position_history
+
+ORDER BY change_time DESC;
