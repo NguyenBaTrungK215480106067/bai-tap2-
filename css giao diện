@@ -1,0 +1,58 @@
+CSS
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.classroom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.student {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.status-bar {
+    width: 50px;
+    height: 20px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.fan {
+    width: 40px;
+    height: 40px;
+    background-image: url('fan-icon.png'); /* Replace with the actual path to the fan image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.tv-status {
+    margin-top: 20px;
+    text-align: center;
+    background-color: blue;
+    color: yellow;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
