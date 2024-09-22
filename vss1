@@ -1,0 +1,105 @@
+HTML 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="classroom">
+        <!-- Bảng đen -->
+        <div class="blackboard"></div>
+
+        <!-- Hàng bàn học và học sinh -->
+        <div class="row">
+            <div class="desk"></div>
+            <div class="desk"></div>
+        </div>
+
+        <div class="row">
+            <div class="chair"></div>
+            <div class="student"></div>
+            <div class="chair"></div>
+        </div>
+
+        <div class="row">
+            <div class="chair"></div>
+            <div class="student"></div>
+            <div class="chair"></div>
+        </div>
+
+        <div class="row">
+            <div class="chair"></div>
+            <div class="student"></div>
+            <div class="chair"></div>
+        </div>
+
+        <div class="row">
+            <div class="chair"></div>
+            <div class="student"></div>
+            <div class="chair"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+CSS
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.classroom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #000;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.blackboard {
+    width: 300px;
+    height: 100px;
+    background-color: #2F4F4F;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.desk {
+    width: 100px;
+    height: 50px;
+    background-color: #8B4513;
+    border: 2px solid #000;
+}
+
+.chair {
+    width: 50px;
+    height: 50px;
+    background-color: #808080;
+    border: 2px solid #000;
+}
+
+.student {
+    width: 50px;
+    height: 50px;
+    background-color: #FF6347;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.classroom: Đây là container chính của lớp học, với thiết kế linh hoạt (flexbox) để sắp xếp các phần tử theo cột.
+.row: Mỗi hàng chứa bàn, ghế, và học sinh, được bố trí bằng flexbox.
+.blackboard: Đại diện cho bảng đen, được đặt ở đầu lớp học.
+.desk, .chair, .student: Bàn, ghế và học sinh được tạo bằng các hình dạng đơn giản với CSS (hình chữ nhật và hình tròn).
