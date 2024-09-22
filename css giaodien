@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="classroom">
+        <!-- Bục giảng và thầy A -->
+        <div class="board">Bục giảng</div>
+        <div class="teacher">thầy A</div>
+
+        <!-- Hàng bàn và học sinh -->
+        <div class="row">
+            <div class="desk">bàn A</div>
+            <div class="desk">bàn B</div>
+            <div class="desk">bàn C</div>
+            <div class="desk">bàn D</div>
+        </div>
+        <div class="row">
+            <div class="student">HS A</div>
+            <div class="student">HS B</div>
+            <div class="student">HS C</div>
+            <div class="student">HS D</div>
+        </div>
+
+        <div class="row">
+            <div class="desk">bàn E</div>
+            <div class="desk">Bàn F</div>
+            <div class="desk">bàn G</div>
+            <div class="desk">bàn H</div>
+        </div>
+        <div class="row">
+            <div class="student">HS E</div>
+            <div class="student">HS F</div>
+            <div class="student">HS G</div>
+            <div class="student">HS H</div>
+        </div>
+    </div>
+</body>
+</html>
+
+#css
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.classroom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #000;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.board {
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.teacher {
+    width: 60px;
+    height: 60px;
+    background-color: blue;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.desk {
+    width: 60px;
+    height: 30px;
+    background-color: red;
+    text-align: center;
+    color: white;
+}
+
+.student {
+    width: 50px;
+    height: 50px;
+    background-color: brown;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+}
